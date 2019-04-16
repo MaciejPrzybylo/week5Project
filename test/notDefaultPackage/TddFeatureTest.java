@@ -16,12 +16,11 @@ public class TddFeatureTest {
 
 	@Test
 	public void tdd() {
-		try {
-			TddFeature bob = new TddFeature();
-			
-			
-		} catch (ClassNotFoundException e) {
-			fail("Class not existing");
-		}
-
-}}
+		TddFeature bob = new TddFeature();
+}
+	@Test
+	public void accCount() {
+		assertEquals(0,TddFeature.countAcc());
+	
+}
+}
