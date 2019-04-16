@@ -8,28 +8,42 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class app {
-
-	
+	static ObjectMapper mapper = new ObjectMapper();
+	static TddFeature bob = new TddFeature();
+	static Map<Integer, Account> map = new HashMap<Integer, Account>();
 	public static void main(String[] args) {
-		ObjectMapper mapper = new ObjectMapper();
-		System.out.println("Yoo world");
-		TddFeature bob = new TddFeature();
 		
-		Map<Integer, Account> map = new HashMap<Integer, Account>();
+		System.out.println("Yoo world");
+		
+		
+
 		Account acc1 = new Account("Maciej", "Przybylo", 10);
 		Account acc2 = new Account("Janusz", "Smith", 10);
 		Account acc3 = new Account("Bogdan", "GrraazYna", 10);
+		Account acc4 = new Account("Maciej", "Przybylo", 10);
+		Account acc5 = new Account("Maciej", "Przybylo", 10);
+		Account acc6 = new Account("Maciej", "Przybylo", 10);
+		Account acc7 = new Account("Maciej", "Przybylo", 10);
+		Account acc8 = new Account("Maciej", "Przybylo", 10);
 		map.put(1, acc1);
 		map.put(2, acc2);
 		map.put(3, acc3);
-
+		map.put(4, acc4);
+		map.put(5, acc5);
+		map.put(6, acc6);
+		map.put(7, acc7);
+		map.put(8, acc8);
+		
 		for (Map.Entry<Integer, Account> entry : map.entrySet()) {
 			int key = entry.getKey();
 			Account b = entry.getValue();
 			System.out.println(key + " Details:");
 			System.out.println(b.getFirstName()+" "+b.getLastName()+" "+b.getAccountNumber()+" ");  	
 		}
+	
 
+
+	
 		
 		   try {
 	            mapper.writeValue(new File("result.json"), map);
@@ -50,5 +64,19 @@ public class app {
 	            e.printStackTrace();
 	        }
 	System.out.println(bob.getClass());
+	System.out.println("Total: "+ cAcc("Maciej"));
+	}
+
+	public static int cAcc(String nameL) {
+	int i=0;
+		for (Map.Entry<Integer, Account> entry : map.entrySet()) {
+		Account b = entry.getValue();
+		if(b.getFirstName().equals(nameL)) {
+			 i++;
+		}
+		
+	}
+		return i;
+	
 	}
 }

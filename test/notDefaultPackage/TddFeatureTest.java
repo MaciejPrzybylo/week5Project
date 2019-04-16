@@ -11,16 +11,24 @@ import org.junit.Test;
 
 
 public class TddFeatureTest {
+	TddFeature bob = new TddFeature();	
 	
-	
-
+	@Ignore
 	@Test
 	public void tdd() {
 		TddFeature bob = new TddFeature();
 }
 	@Test
 	public void accCount() {
-		assertEquals(0,TddFeature.countAcc());
+		assertEquals(0, bob.countAcc());
 	
 }
+	@Test
+	public void CountAccount() {
+		
+	
+		assertEquals(6, app.cAcc("Maciej"));
+	
+}
+
 }
