@@ -13,7 +13,8 @@ public class app {
 	public static void main(String[] args) {
 		ObjectMapper mapper = new ObjectMapper();
 		System.out.println("Yoo world");
-
+		TddFeature bob = new TddFeature();
+		
 		Map<Integer, Account> map = new HashMap<Integer, Account>();
 		Account acc1 = new Account("Maciej", "Przybylo", 10);
 		Account acc2 = new Account("Janusz", "Smith", 10);
@@ -48,5 +49,6 @@ public class app {
 	        } catch (Exception e) {
 	            e.printStackTrace();
 	        }
+	System.out.println(bob.getClass());
 	}
 }
